@@ -6,12 +6,13 @@
                RST  P1.5								P1.4
                DC   P1.3								P1.3
                CS   默认选中，可不接
-*/
+**/
 
 #include <msp430.h>
 #include "MacroDefination.h"
 #include "FunctionDeclaration.h"
 #include "VariableDefination.h"
+
 
 void main(void)
 {
