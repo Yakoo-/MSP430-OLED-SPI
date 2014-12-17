@@ -14,4 +14,8 @@ $RECYCLE.BIN/
 # CCS5.1 auto-generate files
 Release
 Debug
+<<<<<<< HEAD
 
+=======
+.settings
+>>>>>>> 542d27ee64fabd6c6c72a4b26a0db1a65b82424d
