@@ -1,0 +1,6 @@
+#ifndef	_VARIABLEDEFINITION_H_
+
+#define	_VARIABLEDEFINITION_H_
+
+
+#endif
