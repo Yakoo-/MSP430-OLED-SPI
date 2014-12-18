@@ -26,7 +26,8 @@ void init_port(void)
 void init_spi(void)
 {
 #ifdef _UCA0SPI_
-	UCA0CTL0 |= UCCKPL + UCMSB + UCMST + UCSYNC;  // 3-pin, 8-bit SPI master
+	UCA0CTL1 |=UCSWRST;
+	UCA0CTL0 |= UCCKPL + UCMSB + UCMST + UCMODE_0 + UCSYNC;  // 3-pin, 8-bit SPI master
 	UCA0CTL1 |= UCSSEL_2;                     // SMCLK作为
 	UCA0BR0 |= 0x02;                          // /2
 	UCA0BR1 = 0;                              //
@@ -37,14 +38,14 @@ void init_spi(void)
 #endif
 
 #ifdef _UCB0SPI_
-	UCB0CTL0 |= UCCKPL + UCMSB + UCMST;  // 3-pin, 8-bit SPI master
-	UCB0CTL1 |= UCSSEL_2;                     // SMCLK作为
+	UCB0CTL1 |=UCSWRST;			//Enable SW reset
+	UCB0CTL0 |= UCCKPL + UCMSB + UCMST + UCMODE_0 + UCSYNC;  // 3-pin, 8-bit SPI master
+	UCB0CTL1 |= UCSSEL_2 + UCSWRST;                     // SMCLK作为外围设备时钟
 	UCB0BR0 |= 0x02;                          // /2
 	UCB0BR1 = 0;                              //
 //	UCB0MCTL = 0;                             // No modulation
 	UCB0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
 	IE2 |= UCB0RXIE;                          // Enable USCI0 RX interrupt
-	IE2 |= UCB0TXIE;
 #endif
 }
 

@@ -6,9 +6,15 @@
 //SPI 发送程序
 void SPI_Send_Byte(uchar8 data)
 {
+#ifdef _UCA0SPI_
 	while (!(IFG2 & UCA0TXIFG));
-	UCA0TXBUF = data;
-	while (!(IFG2 & UCA0TXIFG));
+		UCA0TXBUF = data;
+#endif
+
+#ifdef _UCB0SPI_
+	while(!(IFG2 & UCB0TXIFG));
+		UCB0TXBUF = data;
+#endif
 }
 //OLED主界面
 void Figure_Main(void)

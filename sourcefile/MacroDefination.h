@@ -1,7 +1,7 @@
 #ifndef _MACRODEFINATION_H_
 #define _MACRODEFINATION_H_
 
-#define _UCA0SPI_			//选择SPI通信模块
+#define _UCB0SPI_			//选择SPI通信模块
 
 //数据类型
 #define uchar8 			unsigned char
