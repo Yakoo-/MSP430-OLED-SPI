@@ -18,3 +18,11 @@ void Figure_Main(void)
 	OLED_P8x16Str(0, 2, (uchar8*)"Hello! Yakoo~");
 	OLED_P8x16Str(0, 3, (uchar8*)"Hello! Yakoo~");
 }
+
+//Delayº¯Êý
+void Delay_ms(uint16 ms)
+{
+	uint16 i,j;
+	for( i=0;i<ms;i++)
+		for(j=0;j<142;j++); //8MHz¾§ÕñÊ±  }
+}

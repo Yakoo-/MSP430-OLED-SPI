@@ -23,5 +23,11 @@ void main(void)
 	OLED_Init();
     LED_ON;
 	Figure_Main();
-	while(1);
+	while(1)
+		{
+			Delay_ms(1000);
+			LED_OFF;
+			Delay_ms(1000);
+			LED_ON;
+		}
 }

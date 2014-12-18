@@ -10,6 +10,7 @@ void init_spi(void);
 //Function_User.c
 void SPI_Send_Byte(uchar8);
 void Figure_Main(void);
+void Delay_ms(uint16);
 
 //Function_Driver_OLED.c
 void OLED_WrDat(uchar8 ucData);		//Ð´Êý¾Ý
